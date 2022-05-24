@@ -18,6 +18,8 @@ const PhotoSwipe = ({
   open,
   onIndexChange,
   onOpenChange,
+  leftArrow,
+  rightArrow,
   options = {},
   theme,
 }) => {
@@ -77,7 +79,7 @@ const PhotoSwipe = ({
   return (
     <>
       <Global styles={styles(theme)} />
-      <PhotoSwipeWrapper 
+      <PhotoSwipeWrapper
         leftArrow={leftArrow}
         rightArrow={rightArrow}
         setRef={wrapper}
