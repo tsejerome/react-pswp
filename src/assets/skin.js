@@ -82,3 +82,12 @@ export default color =>
     .replace(/>\s{1,}</g, '><')
     .replace(/\s{2,}/g, ' ')
     .replace(/[\r\n%#()<>?[\\\]^`{|}]/g, encodeURIComponent);
+
+    
+export const leftArrow = `<svg width="34" height="58" viewBox="0 0 34 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 29L1.49728 28.4434L0.881074 29L1.49728 29.5566L2 29ZM32.4973 0.443423L1.49728 28.4434L2.50271 29.5566L33.5027 1.55658L32.4973 0.443423ZM1.49728 29.5566L32.4973 57.5566L33.5027 56.4434L2.50271 28.4434L1.49728 29.5566Z" fill="#868686"/>
+</svg>`;
+
+export const rightArrow = `<svg width="34" height="58" viewBox="0 0 34 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M32 29L32.5027 29.5566L33.1189 29L32.5027 28.4434L32 29ZM1.50271 57.5566L32.5027 29.5566L31.4973 28.4434L0.497284 56.4434L1.50271 57.5566ZM32.5027 28.4434L1.50272 0.443422L0.49729 1.55657L31.4973 29.5566L32.5027 28.4434Z" fill="#868686"/>
+</svg>`;

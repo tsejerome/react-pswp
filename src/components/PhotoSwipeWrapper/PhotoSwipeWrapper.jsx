@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Root element of PhotoSwipe. Must have class pswp.
-const PhotoswipeWrapper = ({ setRef, children, transition }) => (
+const PhotoswipeWrapper = ({ setRef, children, transition, leftArrow, rightArrow }) => (
   <div
     ref={setRef}
     className="pswp"
@@ -18,14 +18,6 @@ const PhotoswipeWrapper = ({ setRef, children, transition }) => (
     {children}
     {/* Slides wrapper with overflow:hidden. */}
     <div className="pswp__scroll-wrap">
-      {/* Container that holds slides.
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. */}
-      <div className={`pswp__container ${transition ? 'pswp__container_transition' : ''}`}>
-        <div className="pswp__item" />
-        <div className="pswp__item" />
-        <div className="pswp__item" />
-      </div>
       {/* Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. */}
       <div className="pswp__ui pswp__ui--hidden">
         <div className="pswp__top-bar">
@@ -59,19 +51,33 @@ const PhotoswipeWrapper = ({ setRef, children, transition }) => (
         <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
           <div className="pswp__share-tooltip" />
         </div>
-        <button
-          type="button"
-          className="pswp__button pswp__button--arrow--left"
-          title="Previous (arrow left)"
-        />
-        <button
+        {
+          leftArrow || 
+          <button
+            type="button"
+            className="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          />
+        }
+        {
+          rightArrow || 
+          <button
           type="button"
           className="pswp__button pswp__button--arrow--right"
           title="Next (arrow right)"
-        />
+          />
+        }
         <div className="pswp__caption">
           <div className="pswp__caption__center" />
         </div>
+      </div>
+      {/* Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. */}
+      <div className={`pswp__container ${transition ? 'pswp__container_transition' : ''}`}>
+        <div className="pswp__item" />
+        <div className="pswp__item" />
+        <div className="pswp__item" />
       </div>
     </div>
   </div>
@@ -81,6 +87,8 @@ PhotoswipeWrapper.propTypes = {
   setRef: PropTypes.object.isRequired,
   children: PropTypes.element,
   transition: PropTypes.bool,
+  leftArrow: PropTypes.element,
+  rightArrow: PropTypes.element
 };
 
 PhotoswipeWrapper.defaultProps = {

@@ -77,7 +77,13 @@ const PhotoSwipe = ({
   return (
     <>
       <Global styles={styles(theme)} />
-      <PhotoSwipeWrapper setRef={wrapper}>{children}</PhotoSwipeWrapper>
+      <PhotoSwipeWrapper 
+        leftArrow={leftArrow}
+        rightArrow={rightArrow}
+        setRef={wrapper}
+      >
+        {children}
+      </PhotoSwipeWrapper>
     </>
   );
 };
@@ -87,6 +93,9 @@ PhotoSwipe.propTypes = {
   container: PropTypes.array.isRequired,
   index: PropTypes.number,
   onIndexChange: PropTypes.func,
+  onOpenChange: PropTypes.func,
+  leftArrow: PropTypes.element,
+  rightArrow: PropTypes.element,
   onOpenChange: PropTypes.func,
   open: PropTypes.bool,
   theme: PropTypes.object,

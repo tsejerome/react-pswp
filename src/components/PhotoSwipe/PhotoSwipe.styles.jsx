@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-import skin from '../../assets/skin';
+import skin, {leftArrow, rightArrow} from '../../assets/skin';
 
 const defaultTheme = {
   foreground: '#000',
@@ -65,9 +65,13 @@ export default (theme = defaultTheme) => css`
   .pswp__button--arrow--right:before {
     width: 44px;
     height: 44px;
-    background: url("data:image/svg+xml,${skin(
-      theme.foreground,
-    )}") 0 0 no-repeat;
+  }
+  .pswp__button--arrow--left:before{
+    background: url("data:image/svg+xml,${leftArrow}") 0 0 no-repeat;
+    background-size: 264px 88px;
+  }
+  .pswp__button--arrow--right:before {
+    background: url("data:image/svg+xml,${rightArrow}") 0 0 no-repeat;
     background-size: 264px 88px;
   }
 
@@ -83,9 +87,9 @@ export default (theme = defaultTheme) => css`
     display: none;
   }
 
-  .pswp--supports-fs .pswp__button--fs {
+  /*.pswp--supports-fs .pswp__button--fs {
     display: block;
-  }
+  }*/
 
   .pswp--fs .pswp__button--fs {
     background-position: -44px 0;
@@ -171,6 +175,13 @@ export default (theme = defaultTheme) => css`
     z-index: 1600;
     opacity: 0;
     will-change: opacity;
+  }
+  
+  .pswp__caption {
+    position: absolute;
+    top: 20px;
+    left: 50vw;
+    z-index: 200;
   }
 
   .pswp__share-modal--hidden {
@@ -452,6 +463,11 @@ export default (theme = defaultTheme) => css`
 
   .pswp__ui--idle .pswp__button--arrow--left,
   .pswp__ui--idle .pswp__button--arrow--right {
+    opacity: 0;
+  }
+  
+  .pswp__ui--idle > div,
+  .pswp__ui--idle > button {
     opacity: 0;
   }
 
