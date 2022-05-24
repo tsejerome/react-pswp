@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/react-pswp/static/css/main.46455362.chunk.css",
-    "main.js": "/react-pswp/static/js/main.b7301ddc.chunk.js",
-    "main.js.map": "/react-pswp/static/js/main.b7301ddc.chunk.js.map",
+    "main.js": "/react-pswp/static/js/main.185098ff.chunk.js",
+    "main.js.map": "/react-pswp/static/js/main.185098ff.chunk.js.map",
     "runtime-main.js": "/react-pswp/static/js/runtime-main.16259307.js",
     "runtime-main.js.map": "/react-pswp/static/js/runtime-main.16259307.js.map",
     "static/js/2.431b55c0.chunk.js": "/react-pswp/static/js/2.431b55c0.chunk.js",
     "static/js/2.431b55c0.chunk.js.map": "/react-pswp/static/js/2.431b55c0.chunk.js.map",
     "index.html": "/react-pswp/index.html",
-    "precache-manifest.21d64090dbe4235a8bf558e60fc2b163.js": "/react-pswp/precache-manifest.21d64090dbe4235a8bf558e60fc2b163.js",
+    "precache-manifest.43a7bf97180e329d3b57100601b0ba07.js": "/react-pswp/precache-manifest.43a7bf97180e329d3b57100601b0ba07.js",
     "service-worker.js": "/react-pswp/service-worker.js",
     "static/css/main.46455362.chunk.css.map": "/react-pswp/static/css/main.46455362.chunk.css.map",
     "static/js/2.431b55c0.chunk.js.LICENSE.txt": "/react-pswp/static/js/2.431b55c0.chunk.js.LICENSE.txt",
-    "static/js/main.b7301ddc.chunk.js.LICENSE.txt": "/react-pswp/static/js/main.b7301ddc.chunk.js.LICENSE.txt"
+    "static/js/main.185098ff.chunk.js.LICENSE.txt": "/react-pswp/static/js/main.185098ff.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.16259307.js",
     "static/js/2.431b55c0.chunk.js",
     "static/css/main.46455362.chunk.css",
-    "static/js/main.b7301ddc.chunk.js"
+    "static/js/main.185098ff.chunk.js"
   ]
 }
