@@ -1,0 +1,13 @@
+diff --git a/node_modules/photoswipe/dist/photoswipe.js b/node_modules/photoswipe/dist/photoswipe.js
+index 467c1ce..6eab6bf 100644
+--- a/node_modules/photoswipe/dist/photoswipe.js
++++ b/node_modules/photoswipe/dist/photoswipe.js
+@@ -2756,7 +2756,7 @@ var _getItemAt,
+ 
+ 
+ 			_tempPanAreaSize.x = viewportSize.x;
+-			_tempPanAreaSize.y = viewportSize.y - item.vGap.top - item.vGap.bottom;
++			_tempPanAreaSize.y = viewportSize.y - item.vGap.top;
+ 
+ 			if (isInitial) {
+ 				var hRatio = _tempPanAreaSize.x / item.w;

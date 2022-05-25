@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-import skin, {leftArrow, rightArrow} from '../../assets/skin';
+import skin, { leftArrow, rightArrow } from '../../assets/skin';
 
 const defaultTheme = {
   foreground: '#000',
@@ -179,9 +179,14 @@ export default (theme = defaultTheme) => css`
   
   .pswp__caption {
     position: absolute;
-    top: 20px;
-    left: 50vw;
-    z-index: 200;
+    top: 12vh;
+    right: calc( 40vw - 140px );
+    max-width: 288px;
+    max-height: calc( 100vh - 24vh );
+    height: 400px;
+    width: 100%;
+    z-index: 200;   
+    left: unset; 
   }
 
   .pswp__share-modal--hidden {
@@ -202,7 +207,9 @@ export default (theme = defaultTheme) => css`
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     will-change: transform;
   }
-
+  .pswp__container, .pswp__zoom-wrap {
+    left: -100px;
+  }
   .pswp__share-tooltip a {
     display: block;
     padding: 8px 12px;
@@ -270,13 +277,6 @@ export default (theme = defaultTheme) => css`
   }
 
   /* 4. Caption */
-  .pswp__caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    min-height: 44px;
-  }
 
   .pswp__caption small {
     font-size: 11px;
@@ -290,7 +290,7 @@ export default (theme = defaultTheme) => css`
     line-height: 20px;
     color: ${theme.foreground};
     text-align: left;
-    max-width: 420px;
+    max-width: 288px;
     text-align: center;
   }
 
@@ -447,13 +447,13 @@ export default (theme = defaultTheme) => css`
 
   .pswp__top-bar,
   .pswp__caption {
-    background-color: ${theme.background};
+    background-color: transparent;
   }
 
   /* pswp__ui--fit class is added when main image "fits" between top bar and bottom bar (caption) */
   .pswp__ui--fit .pswp__top-bar,
   .pswp__ui--fit .pswp__caption {
-    background-color: ${theme.background};
+    background-color: transparent;
   }
 
   /* pswp__ui--idle class is added when mouse isn't moving for several seconds (JS option timeToIdle) */

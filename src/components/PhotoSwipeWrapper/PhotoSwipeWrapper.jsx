@@ -18,8 +18,17 @@ const PhotoswipeWrapper = ({ setRef, children, transition, leftArrow, rightArrow
     {children}
     {/* Slides wrapper with overflow:hidden. */}
     <div className="pswp__scroll-wrap">
-      {/* Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. */}
-      <div className="pswp__ui pswp__ui--hidden">
+    
+      {/* Container that holds slides.
+        PhotoSwipe keeps only 3 of them in the DOM to save memory.
+        Don't modify these 3 pswp__item elements, data is added later on. */}
+      <div className={`pswp__container ${transition ? 'pswp__container_transition' : ''}`}>
+        <div className="pswp__item" />
+        <div className="pswp__item" />
+        <div className="pswp__item" />
+      </div>
+        {/* Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. */}
+        <div className="pswp__ui pswp__ui--hidden">
         <div className="pswp__top-bar">
           {/* Controls are self-explanatory. Order can be changed. */}
           <div className="pswp__counter" />
@@ -70,14 +79,6 @@ const PhotoswipeWrapper = ({ setRef, children, transition, leftArrow, rightArrow
         <div className="pswp__caption">
           <div className="pswp__caption__center" />
         </div>
-      </div>
-      {/* Container that holds slides.
-        PhotoSwipe keeps only 3 of them in the DOM to save memory.
-        Don't modify these 3 pswp__item elements, data is added later on. */}
-      <div className={`pswp__container ${transition ? 'pswp__container_transition' : ''}`}>
-        <div className="pswp__item" />
-        <div className="pswp__item" />
-        <div className="pswp__item" />
       </div>
     </div>
   </div>
