@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-import skin, { leftArrow, rightArrow } from '../../assets/skin';
+import skin, { leftArrow, rightArrow, cross } from '../../assets/skin';
 
 const defaultTheme = {
   foreground: '#000',
@@ -32,8 +32,8 @@ export default (theme = defaultTheme) => css`
     display: block;
     position: relative;
     float: right;
-    width: 44px;
-    height: 44px;
+    width: 75px;
+    height: 75px;
     margin: 0;
     padding: 0;
     background: none;
@@ -55,32 +55,32 @@ export default (theme = defaultTheme) => css`
     opacity: 0.9;
   }
 
-  /* pswp__ui--over-close class it added when mouse is over element that should close gallery */
-  .pswp__ui--over-close .pswp__button--close {
-    opacity: 1;
+  .pswp__button:not(.pswp__button--arrow--left,.pswp__button--arrow--right,.pswp__button--close){
+    width: 75px;	
+    height: 75px;
+    background: url("data:image/svg+xml,${skin('#838383')}") 0 0 no-repeat;
+    background-size: 448px 150px;
   }
-
-  .pswp__button,
-  .pswp__button--arrow--left:before,
-  .pswp__button--arrow--right:before {
+  .pswp__button--arrow--left button:before{
+    width: 35px;
+    height: 60px;
+    background: url("data:image/svg+xml,${leftArrow}") 0 0 no-repeat;
+  }
+  .pswp__button--arrow--right button:before {
+    width: 35px;
+    height: 60px;
+    background: url("data:image/svg+xml,${rightArrow}") 0 0 no-repeat;
+  }
+  .pswp__button--close:before {
     width: 44px;
     height: 44px;
-  }
-  .pswp__button--arrow--left:before{
-    background: url("data:image/svg+xml,${leftArrow}") 0 0 no-repeat;
-    background-size: 264px 88px;
-  }
-  .pswp__button--arrow--right:before {
-    background: url("data:image/svg+xml,${rightArrow}") 0 0 no-repeat;
-    background-size: 264px 88px;
-  }
-
-  .pswp__button--close {
-    background-position: 0 -44px;
+    right: 16px;
+    top: 16px;
+    background: url("data:image/svg+xml,${cross}") 0 0 no-repeat;
   }
 
   .pswp__button--share {
-    background-position: -44px -44px;
+    background-position: -44px -44px!important;
   }
 
   .pswp__button--fs {
@@ -97,16 +97,13 @@ export default (theme = defaultTheme) => css`
 
   .pswp__button--zoom {
     display: none;
-    background-position: -88px 0;
+    background-position: -150px 0!important;
   }
 
   .pswp--zoom-allowed .pswp__button--zoom {
     display: block;
   }
 
-  .pswp--zoomed-in .pswp__button--zoom {
-    background-position: -132px 0;
-  }
 
   /* no arrows on touch screens */
   .pswp--touch .pswp__button--arrow--left,
@@ -121,11 +118,11 @@ export default (theme = defaultTheme) => css`
   .pswp__button--arrow--left,
   .pswp__button--arrow--right {
     position: absolute;
-    top: 50%;
+    display: flex;
+    align-items: center;
+    top: 75px;
     width: 70px;
-    height: 100px;
-    background: none;
-    margin-top: -50px;
+    height: calc( 100vh - 150px);
   }
 
   .pswp__button--arrow--left {
@@ -136,24 +133,23 @@ export default (theme = defaultTheme) => css`
     right: 0;
   }
 
-  .pswp__button--arrow--left:before,
-  .pswp__button--arrow--right:before {
+  .pswp__button--arrow--left button:before,
+  .pswp__button--arrow--right button:before,
+  .pswp__button--close:before {
     content: '';
     position: absolute;
-    top: 35px;
-    width: 32px;
-    height: 30px;
-    background-color: ${theme.background};
+  }
+  .pswp__button--arrow--left button:before,
+  .pswp__button--arrow--right button:before{
+    transform: translateY(-50%);
+  }
+  
+  .pswp__button--arrow--left button:before {
+    left: 12px;
   }
 
-  .pswp__button--arrow--left:before {
-    left: 6px;
-    background-position: -138px -44px;
-  }
-
-  .pswp__button--arrow--right:before {
-    right: 6px;
-    background-position: -94px -44px;
+  .pswp__button--arrow--right button:before {
+    right: 12px;
   }
 
   /* 2. Share modal/popup and links */
@@ -180,13 +176,12 @@ export default (theme = defaultTheme) => css`
   .pswp__caption {
     position: absolute;
     top: 12vh;
-    right: calc( 40vw - 140px );
+    left: calc( 60vw + 140px );
     max-width: 288px;
     max-height: calc( 100vh - 24vh );
     height: 400px;
     width: 100%;
     z-index: 200;   
-    left: unset; 
   }
 
   .pswp__share-modal--hidden {
@@ -423,12 +418,11 @@ export default (theme = defaultTheme) => css`
 
   /* top background bar with buttons and "1 of X" indicator */
   .pswp__top-bar {
-    background: ${theme.background} !important;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 44px;
+    height: 75px;
   }
 
   .pswp__caption,
@@ -487,6 +481,10 @@ export default (theme = defaultTheme) => css`
   .pswp__ui--one-slide .pswp__button--arrow--left,
   .pswp__ui--one-slide .pswp__button--arrow--right,
   .pswp__ui--one-slide .pswp__counter {
+    display: none;
+  }
+  
+  .pswp__counter {
     display: none;
   }
 

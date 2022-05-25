@@ -62,19 +62,23 @@ const PhotoswipeWrapper = ({ setRef, children, transition, leftArrow, rightArrow
         </div>
         {
           leftArrow || 
-          <button
-            type="button"
-            className="pswp__button pswp__button--arrow--left"
-            title="Previous (arrow left)"
-          />
+          <div className='pswp__button pswp__button--arrow--left'>
+            <button
+              type="button"
+              className=""
+              title="Previous (arrow left)"
+              />
+          </div>
         }
         {
           rightArrow || 
-          <button
-          type="button"
-          className="pswp__button pswp__button--arrow--right"
-          title="Next (arrow right)"
-          />
+          <div className='pswp__button pswp__button--arrow--right'>
+            <button
+            type="button"
+            className=""
+            title="Next (arrow right)"
+            />
+          </div>
         }
         <div className="pswp__caption">
           <div className="pswp__caption__center" />
