@@ -59,7 +59,7 @@ const PreviewProvider = () => {
           options={options}
           theme={{
             foreground: '#1A202C',
-            background: '#81E6D9',
+            background: '#ffffffe9',
           }}
         />
       </div>

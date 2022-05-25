@@ -7,18 +7,18 @@
 ## Install
 
 ```bash
-yarn add react-pswp
+yarn add @tsejerome/react-pswp
 // or
-npm install --save react-pswp
+npm install --save @tsejerome/react-pswp
 ```
 
 ## Usage
 
 ```jsx
 import React, { useState, useEffect } from 'react';
-import { Gallery, PhotoSwipe } from 'react-pswp';
+import { Gallery, PhotoSwipe } from '@tsejerome/react-pswp';
 
-import 'react-pswp/dist/index.css';
+import '@tsejerome/react-pswp/dist/index.css';
 
 const MyApp = () => {
   const [index, setIndex] = useState(null);
@@ -32,7 +32,7 @@ const MyApp = () => {
     msrc: picture.thumbnail,
     w: picture.width,
     h: picture.height,
-    title: `Picture by ${picture.author}`,
+    title: `<div>This is a div that act as the description of the image</div>`,
   }));
 
   useEffect(() => {
@@ -62,6 +62,12 @@ const MyApp = () => {
   )
 }
 ```
+
+## How is this different from the original react-pswp
+This variation of react-pswp focuses on putting the photo description on the right of the image, meanwhile keeping the original functionality of react-pswp.
+Here is an example: 
+![alt text](https://i.imgur.com/zFs4rPG.png "Sample")
+
 
 For more information, 📗 **[read the interactive documentation](https://antistatique.github.io/react-pswp)**
 
