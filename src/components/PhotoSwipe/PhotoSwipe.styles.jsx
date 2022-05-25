@@ -61,12 +61,12 @@ export default (theme = defaultTheme) => css`
     background: url("data:image/svg+xml,${skin('#838383')}") 0 0 no-repeat;
     background-size: 448px 150px;
   }
-  .pswp__button--arrow--left button:before{
+  .pswp__button--arrow--left:before{
     width: 35px;
     height: 60px;
     background: url("data:image/svg+xml,${leftArrow}") 0 0 no-repeat;
   }
-  .pswp__button--arrow--right button:before {
+  .pswp__button--arrow--right:before {
     width: 35px;
     height: 60px;
     background: url("data:image/svg+xml,${rightArrow}") 0 0 no-repeat;
@@ -133,22 +133,22 @@ export default (theme = defaultTheme) => css`
     right: 0;
   }
 
-  .pswp__button--arrow--left button:before,
-  .pswp__button--arrow--right button:before,
+  .pswp__button--arrow--left:before,
+  .pswp__button--arrow--right:before,
   .pswp__button--close:before {
     content: '';
     position: absolute;
   }
-  .pswp__button--arrow--left button:before,
-  .pswp__button--arrow--right button:before{
+  .pswp__button--arrow--left:before,
+  .pswp__button--arrow--right:before{
     transform: translateY(-50%);
   }
   
-  .pswp__button--arrow--left button:before {
+  .pswp__button--arrow--left:before {
     left: 12px;
   }
 
-  .pswp__button--arrow--right button:before {
+  .pswp__button--arrow--right:before {
     right: 12px;
   }
 
