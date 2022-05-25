@@ -460,7 +460,7 @@ export default (theme = defaultTheme) => css`
     opacity: 0;
   }
   
-  .pswp__ui--idle > div,
+  .pswp__ui--idle > div:not(.pswp__caption),
   .pswp__ui--idle > button {
     opacity: 0;
   }

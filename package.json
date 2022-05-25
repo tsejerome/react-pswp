@@ -1,6 +1,6 @@
 {
   "name": "@tsejerome/react-pswp",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Modified version of React wrapper for PhotoSwipe. This variation of react-pswp allows user to input custom leftArrow and rightArrow, having footer on the right as description.",
   "author": "Antistatique",
   "license": "MIT",
