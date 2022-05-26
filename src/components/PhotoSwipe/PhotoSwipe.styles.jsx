@@ -126,11 +126,11 @@ export default (theme = defaultTheme) => css`
   }
 
   .pswp__button--arrow--left {
-    left: 0;
+    left: 75px;
   }
 
   .pswp__button--arrow--right {
-    right: 0;
+    right: 75px;
   }
 
   .pswp__button--arrow--left:before,
