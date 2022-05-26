@@ -62,11 +62,13 @@ export default (theme = defaultTheme) => css`
     background-size: 448px 150px;
   }
   .pswp__button--arrow--left:before{
+    left: 0px;
     width: 35px;
     height: 60px;
     background: url("data:image/svg+xml,${leftArrow}") 0 0 no-repeat;
   }
   .pswp__button--arrow--right:before {
+    right: 0px;
     width: 35px;
     height: 60px;
     background: url("data:image/svg+xml,${rightArrow}") 0 0 no-repeat;
@@ -125,14 +127,61 @@ export default (theme = defaultTheme) => css`
     height: calc( 100vh - 150px);
   }
 
+  
   .pswp__button--arrow--left {
-    left: 75px;
+    left: 12px;
   }
 
   .pswp__button--arrow--right {
-    right: 75px;
+    right: 12px;
+  }
+  
+  .pswp__caption {
+    position: absolute;
+    top: 12vh;
+    max-width: 288px;
+    max-height: calc( 100vh - 24vh );
+    height: 400px;
+    width: 100%;
+    z-index: 200;   
   }
 
+
+  @media screen and (min-width: 600px)  {
+    .pswp__caption {
+      left: calc( 52vw + 140px )
+    }
+    .pswp__button--arrow--left {
+      left: 12px;
+    }
+    .pswp__button--arrow--right {
+      right: 12px;
+    }
+  }
+  
+  @media screen and (min-width: 1200px)  {
+    .pswp__caption {
+      left: calc( 55vw + 140px );
+    }
+    .pswp__button--arrow--left {
+      left: 50px;
+    }
+    
+    .pswp__button--arrow--right {
+      right: 50px;
+    }
+  }
+  
+  @media screen and (min-width: 1400px)  {
+    .pswp__button--arrow--left {
+      left: 75px;
+    }
+    
+    .pswp__button--arrow--right {
+      right: 75px;
+    }
+  }
+  
   .pswp__button--arrow--left:before,
   .pswp__button--arrow--right:before,
   .pswp__button--close:before {
@@ -144,13 +193,7 @@ export default (theme = defaultTheme) => css`
     transform: translateY(-50%);
   }
   
-  .pswp__button--arrow--left:before {
-    left: 12px;
-  }
 
-  .pswp__button--arrow--right:before {
-    right: 12px;
-  }
 
   /* 2. Share modal/popup and links */
   .pswp__counter,
@@ -173,17 +216,6 @@ export default (theme = defaultTheme) => css`
     will-change: opacity;
   }
   
-  .pswp__caption {
-    position: absolute;
-    top: 12vh;
-    left: calc( 60vw + 140px );
-    max-width: 288px;
-    max-height: calc( 100vh - 24vh );
-    height: 400px;
-    width: 100%;
-    z-index: 200;   
-  }
-
   .pswp__share-modal--hidden {
     display: none;
   }
@@ -202,9 +234,17 @@ export default (theme = defaultTheme) => css`
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
     will-change: transform;
   }
+  
   .pswp__container, .pswp__zoom-wrap {
-    left: -100px;
+    left: -50px;
   }
+  
+  @media screen and (min-width: 1024px)  {
+    .pswp__container, .pswp__zoom-wrap {
+      left: -100px;
+    }
+  }
+  
   .pswp__share-tooltip a {
     display: block;
     padding: 8px 12px;
