@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import React, { useRef, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import PSWP from 'photoswipe/dist/photoswipe';
-import photoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 import { jsx, Global } from '@emotion/core';
-
+import PropTypes from 'prop-types';
+import PSWP from '../../photoswipe/dist/photoswipe';
+import photoSwipeUIDefault from '../../photoswipe/dist/photoswipe-ui-default';
 import PhotoSwipeWrapper from '../PhotoSwipeWrapper';
 
 import styles from './PhotoSwipe.styles.jsx';
 
-import 'photoswipe/dist/photoswipe.css';
+import '../../photoswipe/dist/photoswipe.css';
 
 const PhotoSwipe = ({
   children,
@@ -23,6 +22,7 @@ const PhotoSwipe = ({
   options = {},
   theme,
 }) => {
+  debugger;
   const pswp = useRef(null);
   const wrapper = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(index);
